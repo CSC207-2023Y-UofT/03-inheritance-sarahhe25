@@ -41,7 +41,7 @@ public class CrossbodyBag extends Bag {
      * @param numOfStraps
      */
     public CrossbodyBag(String color, int capacity, int numOfStraps) {
-        super(color, capacity);
+        super(color, capacity);  // call Bag's constructor
         this.numOfStraps = numOfStraps;
     }
 

@@ -101,7 +101,7 @@ public abstract class Bag {
     public String popItem() {
         if (this.numberOfContents > 0) {
             String lastItem = this.contents[this.numberOfContents - 1];
-            this.contents[this.numberOfContents - 1] = "";
+            this.contents[this.numberOfContents - 1] = null;
             this.numberOfContents--;
             return lastItem;
         }
@@ -119,6 +119,9 @@ public abstract class Bag {
      */
     public void increaseCapacity(int n) {
         this.capacity += n;
+        String[] newContents = new String[capacity];
+        System.arraycopy(contents, 0, newContents, 0, numberOfContents);
+        contents = newContents;
     }
 
     /**
